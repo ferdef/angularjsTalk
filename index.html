@@ -45,9 +45,33 @@
     </div>
   </nav>
     
-  <div class="container theme-showcase">
-    <p>Now it´s not so ugly...</p>
-    <img class="img-responsive" src="cognizant_fist.jpg"/>
+  <div class="container">
+    <h1 class="text-center">TO-DO List</h1>
+    <div class="container">
+      <div class="container theme-showcase col-md-6">
+        <img class="img-responsive" src="cognizant_fist.jpg"/>
+      </div>
+      <div class="container col-md-6">
+        <form name="newForm">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">TODO name</div>
+              <input name="newName" class="form-control" type="text" placeholder="Todo name">
+            </div>        
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox">Completed
+            </label>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-success">Add new Item</button>
+          </div>
+        </form>
+      </div>      
+    </div>
+    
+  
   </div>
 
 </body>
