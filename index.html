@@ -18,7 +18,7 @@
   <script type="text/javascript" src="js/controller.js"></script>  
 </head>
 
-<body ng-controller="myAppCtrl">
+<body >
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -48,60 +48,14 @@
     </div>
   </nav>
     
-  <div class="container">
+  <div class="container" ng-controller="myAppCtrl">
     <h1 class="text-center">TO-DO List</h1>
     <div class="container">
       <div class="container theme-showcase col-md-4">
-        <img class="img-responsive" src="cognizant_fist.jpg"/>
+        <img class="img-responsive" src="assets/cognizant_fist.jpg"/>
       </div>
-      <div class="container col-md-8">
-        <form name="newForm">
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon">TODO name</div>
-              <input ng-minlength="3" ng-maxlength="20" ng-model="todo.name" 
-                     name="newName" class="form-control" type="text" placeholder="Todo name">
-            </div>
-            <div>
-              <span ng-show="newForm.newName.$error.maxlength">Name too large</span>
-              <span ng-show="newForm.newName.$error.minlength">Name too short</span>
-            </div>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" ng-model="todo.completed">Completed
-            </label>
-          </div>
-          <div class="text-center">
-            <button ng-click="addItem(todo)" ng-disabled="!todo.name"
-                    class="btn btn-success">
-                    Add new Item
-            </button>
-          </div>
-        </form>
-        <p/>
-        <div>
-          <table class="table table-striped">
-            <thead>
-              <th>Element</th>
-              <th>Date</th>
-              <th>Completed</th>
-              <th class="col-md-1">Action</th>
-            </thead>
-            <tr ng-repeat="item in todos">
-              <td>{{ item.name }}</td>
-              <td>{{ item.entrance | date }}</td>
-              <td>{{ item.completed }}</td>
-              <td class="text-center">
-                <span ng-click="removeItem($index)" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>      
-    </div>
-    
-  
+    </div>    
+    <todoDirective class="col-md-8"></todoDirective>
   </div>
 
 </body>

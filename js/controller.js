@@ -11,3 +11,11 @@ app.controller("myAppCtrl", function($scope) {
 		$scope.todos.splice(itemPos, 1);
 	}
 });
+
+app.directive("todoDirective", function() {
+	return {
+		restrict: 'E',
+		templateUrl: "partials/todo.html",
+		replace: true	
+	};
+});
